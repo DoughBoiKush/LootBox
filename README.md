@@ -6,12 +6,14 @@ Created by Kelsan, Jacob, and Nara
 ==================================
 
 #Description
-
-> ## something about description
 >
-> description description 
+> ## With amazing LootBoxes range from common to **LENGENDARY**.
 >
-> description
+> Players can collect and sell items to get more *LootBoxes* for more **LOOT!**
+>
+> The game features hundreds of items! packed with awesome and amazing items to collect!
+>
+> **Its time to collect them all!**
 
 
 
