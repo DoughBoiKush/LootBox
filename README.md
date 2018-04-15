@@ -1,6 +1,6 @@
 LootBox 
 =========
-To go to [my portfolio](https://github.com/Kelsan1000).
+
 
 Created by Kelsan, Jacob, and Nara
 ==================================
