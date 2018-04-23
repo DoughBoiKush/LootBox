@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LootBox</string>
+    <string name="new_game_button">New Game</string>
+    <string name="continue_game_button">Continue</string>
+    <string name="common_box_button">Common</string>
+    <string name="rare_box_button">Rare</string>
+    <string name="epic_box_button">Epic</string>
+    <string name="legendary_box_button">Legendary</string>
+    <string name="main_box_button">Box</string>
+    <string name="price">Price</string>
+    <string name="possessions_button">Possessions</string>
+</resources>
