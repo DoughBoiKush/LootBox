@@ -11,50 +11,105 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="2dp">
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <Button
             android:id="@+id/common_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="Common" />
+            android:text="@string/common_box_button" />
 
         <Button
             android:id="@+id/rare_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="Rare" />
+            android:text="@string/rare_box_button" />
 
         <Button
             android:id="@+id/epic_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="Epic" />
+            android:text="@string/epic_box_button" />
 
         <Button
             android:id="@+id/lengendary_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="Lengendary" />
+            android:text="@string/legendary_box_button" />
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="203dp" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="264dp"
+        tools:layout_editor_absoluteY="203dp" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="264dp"
+        tools:layout_editor_absoluteY="334dp" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="203dp" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        tools:layout_editor_absoluteX="264dp"
+        tools:layout_editor_absoluteY="77dp" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="460dp">
+        tools:layout_editor_absoluteY="456dp">
 
         <Button
             android:id="@+id/Previous_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Previous"
+            android:text="@string/previous_button"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="446dp" />
 
@@ -62,7 +117,7 @@
             android:id="@+id/Home_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home"
+            android:text="@string/home_button"
             tools:layout_editor_absoluteX="148dp"
             tools:layout_editor_absoluteY="447dp" />
 
@@ -70,14 +125,12 @@
             android:id="@+id/Next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Next"
+            android:text="@string/next_button"
             tools:layout_editor_absoluteX="280dp"
             tools:layout_editor_absoluteY="447dp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
-
-
 
 
 
