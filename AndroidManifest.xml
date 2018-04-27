@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LootBoxActivity"></activity>
+        <activity android:name=".Loot"></activity>
+        <activity android:name=".LootBoxInventory"></activity>
     </application>
 
-</manifest>
+</manifest>rft565
