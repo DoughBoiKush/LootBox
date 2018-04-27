@@ -1,5 +1,6 @@
 package com.mcs270.lootbox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,10 +10,6 @@ import android.widget.TextView;
 
 
 public class game extends AppCompatActivity {
-    private int aCounter=0;
-    private int bCounter=0;
-    private int cCounter=0;
-    private int Dcounter=0;
 
 
 
@@ -20,6 +17,15 @@ public class game extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+       Button mInventoryButton = (Button) findViewById(R.id.inventory_button);
+        mInventoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LootBoxInventory.class);
+                startActivity(intent);
+            }
+        });
+
 
         Button box_one= (Button) findViewById(R.id.box_one_button);
         box_one.setOnClickListener(new View.OnClickListener() {
