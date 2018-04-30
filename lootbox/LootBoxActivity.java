@@ -74,6 +74,13 @@ public class LootBoxActivity extends AppCompatActivity{
         });
 
         mCurrentChest = (ImageButton) findViewById(R.id.current_chest);
+        mCurrentChest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Loot.class);
+                startActivity(intent);
+            }
+        });
         updateChest("500", 1);
     }
 
