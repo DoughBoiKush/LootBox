@@ -25,8 +25,6 @@ public class LootBoxActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
-        price = 500;
-        mCurrentChest.setImageResource(R.drawable.box1);
 
         mInventoryButton = (Button) findViewById(R.id.inventory_button);
         mInventoryButton.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +74,7 @@ public class LootBoxActivity extends AppCompatActivity{
         });
 
         mCurrentChest = (ImageButton) findViewById(R.id.current_chest);
+        updateChest("500", 1);
     }
 
     private void updateChest(String price, int box) {
