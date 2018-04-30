@@ -23,28 +23,28 @@
         app:layout_constraintVertical_bias="0.0">
 
         <Button
-            android:id="@+id/box_one_button"
+            android:id="@+id/common_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="@string/common_box_button" />
 
         <Button
-            android:id="@+id/box_two_button"
+            android:id="@+id/rare_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="@string/rare_box_button" />
 
         <Button
-            android:id="@+id/box_three_button"
+            android:id="@+id/epic_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="@string/epic_box_button" />
 
         <Button
-            android:id="@+id/box_four_button"
+            android:id="@+id/lengendary_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="top"
@@ -52,22 +52,22 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/main_box_button"
+    <ImageButton
+        android:id="@+id/current_chest"
         android:layout_width="90dp"
         android:layout_height="87dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/main_box_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/box1"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/price_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="164dp"
@@ -82,14 +82,14 @@
         app:layout_constraintVertical_bias="0.968" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/inventory_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/possessions_button"
+        android:text="@string/inventory_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -98,4 +98,4 @@
         app:layout_constraintVertical_bias="0.914" />
 
 
-    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
