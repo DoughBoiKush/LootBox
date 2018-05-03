@@ -26,28 +26,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="@string/common_box_button" />
+            android:text="@string/common_box_button"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/rare_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="@string/rare_box_button" />
+            android:text="@string/rare_box_button"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/epic_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="@string/epic_box_button" />
+            android:text="@string/epic_box_button"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/lengendary_chest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="@string/legendary_box_button" />
+            android:text="@string/legendary_box_button"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
@@ -213,6 +217,8 @@
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
+
+
 
 
 
