@@ -1,12 +1,15 @@
 package com.mcs270.lootbox;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -20,6 +23,7 @@ public class LootBoxActivity extends AppCompatActivity{
     private Button mLegendaryButton;
     private ImageButton mCurrentChest;
     private int price;
+    private int mCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mCommonButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest("500", 1);
                 price = 500;
             }
@@ -50,6 +55,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mRareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest("1000", 2);
                 price = 1000;
             }
@@ -59,6 +65,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mEpicButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest("1500", 3);
                 price = 1500;
             }
@@ -68,6 +75,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mLegendaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest("2000", 4);
                 price = 2000;
             }
@@ -77,23 +85,59 @@ public class LootBoxActivity extends AppCompatActivity{
         mCurrentChest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Loot.class);
-                startActivity(intent);
+                mCurrentChest.setImageResource(R.drawable.blank);
+                if( mCounter ==0) {
+                    if (price==500){
+                        ImageView animation1 = findViewById(R.id.imageView);
+                        animation1.setImageResource(R.drawable.animation1);
+                        AnimationDrawable openBox = (AnimationDrawable) animation1.getDrawable();
+                        openBox.start();
+                       mCounter++;
+                    }
+                    else if (price==1000){
+                        ImageView animation2 = findViewById(R.id.imageView);
+                        animation2.setImageResource(R.drawable.animation2);
+                        AnimationDrawable openBox = (AnimationDrawable) animation2.getDrawable();
+                        openBox.start();
+                       mCounter++;
+                    }
+                    else if(price==1500){
+                        ImageView animation3 = findViewById(R.id.imageView);
+                        animation3.setImageResource(R.drawable.animation3);
+                        AnimationDrawable openBox = (AnimationDrawable) animation3.getDrawable();
+                        openBox.start();
+                       mCounter++;
+                    }
+                    else{
+                        ImageView animation4 = findViewById(R.id.imageView);
+                        animation4.setImageResource(R.drawable.animation4);
+                        AnimationDrawable openBox = (AnimationDrawable) animation4.getDrawable();
+                        openBox.start();
+                      mCounter++;
+                    }
+                }
+                else{
+                    Intent intent = new Intent(getApplicationContext(), Loot.class);
+                    startActivity(intent);
+                    mCounter--;}
             }
         });
         updateChest("500", 1);
     }
 
+
+
+
     private void updateChest(String price, int box) {
         mPriceView.setText(price);
         if (box == 1) {
-            mCurrentChest.setImageResource(R.drawable.box1);
+            mCurrentChest.setImageResource(R.drawable.common01);
         } else if (box == 2) {
-            mCurrentChest.setImageResource(R.drawable.box2);
+            mCurrentChest.setImageResource(R.drawable.rare01);
         } else if (box == 3) {
-            mCurrentChest.setImageResource(R.drawable.box3);
+            mCurrentChest.setImageResource(R.drawable.epic01);
         } else if (box == 4) {
-            mCurrentChest.setImageResource(R.drawable.box4);
+            mCurrentChest.setImageResource(R.drawable.legendary01);
         }
     }
 
