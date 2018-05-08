@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/rare01"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare02"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare03"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare04"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare05"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare06"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare07"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare08"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare09"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare10"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare11"
+        android:duration="100" />
+    <item android:drawable="@drawable/rare12"
+        android:duration="100" />
+
+
+</animation-list>

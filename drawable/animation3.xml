@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+    <item android:drawable="@drawable/epic01"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic02"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic03"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic04"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic05"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic06"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic07"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic08"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic09"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic10"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic11"
+        android:duration="100" />
+    <item android:drawable="@drawable/epic12"
+        android:duration="100" />
+
+
+</animation-list>
