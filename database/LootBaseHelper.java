@@ -18,6 +18,7 @@ import com.mcs270.lootbox.database.LootDbSchema.LootTable;
             db.execSQL("create table " + LootTable.NAME + "(" +
                     " _id integer primary key autoincrement, " +
                     LootTable.Cols.UUID + ", " +
+                    LootTable.Cols.NUM + "," +
                     LootTable.Cols.TIER + ", " +
                     LootTable.Cols.RARITY + ", " +
                     LootTable.Cols.PRICE + ", " +
