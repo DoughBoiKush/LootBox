@@ -25,6 +25,7 @@ public class LootBoxActivity extends AppCompatActivity{
     private Button mLegendaryButton;
     private ImageButton mCurrentChest;
     private int price;
+    private long mLastClickTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +87,10 @@ public class LootBoxActivity extends AppCompatActivity{
         mCurrentChest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // mis-clicking prevention, using threshold of 1200 ms
+                if (SystemClock.elapsedRealtime() - mLastClickTime < 1200){
+                    return;
+                }
                 mCurrentChest.setImageResource(R.drawable.blank);
                 if (price == 500){
                     ImageView animation1 = findViewById(R.id.imageView);
@@ -96,7 +101,7 @@ public class LootBoxActivity extends AppCompatActivity{
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            // Do something after 5s = 5000ms
+                            // Do something after 1.2s = 1200ms
                             Intent intent = new Intent(getApplicationContext(), Loot.class);
                             startActivity(intent);
                         }
@@ -111,7 +116,7 @@ public class LootBoxActivity extends AppCompatActivity{
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            // Do something after 5s = 5000ms
+                            // Do something after 1.2s = 1200ms
                             Intent intent = new Intent(getApplicationContext(), Loot.class);
                             startActivity(intent);
                         }
@@ -126,7 +131,7 @@ public class LootBoxActivity extends AppCompatActivity{
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            // Do something after 5s = 5000ms
+                            // Do something after 1.2s = 1200ms
                             Intent intent = new Intent(getApplicationContext(), Loot.class);
                             startActivity(intent);
                         }
@@ -141,7 +146,7 @@ public class LootBoxActivity extends AppCompatActivity{
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            // Do something after 5s = 5000ms
+                            // Do something after 1.2s = 1200ms
                             Intent intent = new Intent(getApplicationContext(), Loot.class);
                             startActivity(intent);
                         }
