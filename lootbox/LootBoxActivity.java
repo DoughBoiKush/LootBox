@@ -171,4 +171,4 @@ public class LootBoxActivity extends AppCompatActivity{
     }
 
 }
-}
+
