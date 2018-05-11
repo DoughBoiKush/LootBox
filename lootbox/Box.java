@@ -9,6 +9,7 @@ public class Box {
     private String mRarity;
     private boolean mKept;
     private String mPrice;
+    private int mNum;
 
     public Box(){
         this(UUID.randomUUID());
@@ -53,5 +54,9 @@ public class Box {
     public void setPrice(String price) {
         mPrice = price;
     }
+
+    public int getNum() { return mNum; }
+
+    public void setNum(int num) {mNum = num;}
 
 }
