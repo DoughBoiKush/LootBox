@@ -98,9 +98,12 @@ public class LootLab {
         return  new LootCursorWrapper(cursor);
     }
 
+
+
     private static ContentValues getContentValues(Box box) {
         ContentValues values = new ContentValues();
         values.put(LootTable.Cols.UUID, box.getId().toString());
+        values.put(LootTable.Cols.NUM, box.getNum());
         values.put(LootTable.Cols.TIER, box.getTier());
         values.put(LootTable.Cols.RARITY, box.getRarity());
         values.put(LootTable.Cols.KEPT, box.isKept() ? 1 : 0);
@@ -110,3 +113,4 @@ public class LootLab {
     }
 
 }
+
