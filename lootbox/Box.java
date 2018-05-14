@@ -1,4 +1,5 @@
 package com.mcs270.lootbox;
+package com.mcs270.lootbox;
 
 import java.util.UUID;
 
@@ -60,3 +61,4 @@ public class Box {
     public void setNum(int num) {mNum = num;}
 
 }
+
