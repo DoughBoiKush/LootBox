@@ -1,4 +1,3 @@
-
 package com.mcs270.lootbox;
 
 import android.content.Intent;
