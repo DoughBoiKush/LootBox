@@ -17,6 +17,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
+        android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +30,8 @@
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="@string/common_box_button"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/rare_chest"
@@ -37,7 +39,8 @@
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="@string/rare_box_button"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/epic_chest"
@@ -45,7 +48,8 @@
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="@string/epic_box_button"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/lengendary_chest"
@@ -53,7 +57,8 @@
             android:layout_height="wrap_content"
             android:gravity="top"
             android:text="@string/legendary_box_button"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
@@ -101,8 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/inventory_button"
@@ -119,6 +123,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.914" />
+
+    <Button
+        android:id="@+id/stats_button"
+        android:layout_width="98dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Stats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
