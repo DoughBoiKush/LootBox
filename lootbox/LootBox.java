@@ -26,25 +26,24 @@ public class LootBox extends AppCompatActivity {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
 
-        if(mSharedPreferences.getBoolean("save", false) == false) {
-            newGame();
-        }
-
         mContinueGameButton = (Button) findViewById(R.id.continue_game_button);
         mContinueGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LootBoxActivity.class);
+                Intent intent = LootBoxActivity.newIntent(getApplicationContext(), 1);
                 startActivity(intent);
             }
         });
+        if(mSharedPreferences.getBoolean("save", false) == false) {
+            mContinueGameButton.setVisibility(View.GONE);
+        }
 
         mNewGameButton = (Button) findViewById(R.id.new_game_button);
         mNewGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 newGame();
-                Intent intent = new Intent(getApplicationContext(), LootBoxActivity.class);
+                Intent intent = LootBoxActivity.newIntent(getApplicationContext(), 1);
                 startActivity(intent);
             }
         });
@@ -52,10 +51,13 @@ public class LootBox extends AppCompatActivity {
 
     public void newGame() {
         mEditor.putBoolean("save", true);
-        for (int i = 0; i < 100; i++) {
+        mEditor.commit();
+        for (int i = 1; i < 180; i++) {
             mEditor.putBoolean(Integer.toString(i), false);
+            mEditor.commit();
         }
         mEditor.putInt("money", 200);
+        mEditor.commit();
     }
 
 }
