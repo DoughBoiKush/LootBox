@@ -1,6 +1,7 @@
 
 package com.mcs270.lootbox;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.preference.PreferenceManager;
@@ -9,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.SharedPreferences;
+import android.content.DialogInterface;
+import android.app.AlertDialog;
 
 public class LootBox extends AppCompatActivity {
 
@@ -42,9 +45,33 @@ public class LootBox extends AppCompatActivity {
         mNewGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                newGame();
-                Intent intent = LootBoxActivity.newIntent(getApplicationContext(), 1);
-                startActivity(intent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+
+                builder.setTitle("Confirm");
+                builder.setMessage("Are you sure?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        newGame();
+                        Intent intent = LootBoxActivity.newIntent(getApplicationContext(), 1);
+                        startActivity(intent);
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        // Do nothing
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
     }
@@ -57,6 +84,18 @@ public class LootBox extends AppCompatActivity {
             mEditor.commit();
         }
         mEditor.putInt("money", 200);
+        mEditor.commit();
+        mEditor.putInt("totalMoney", 200);
+        mEditor.commit();
+        mEditor.putInt("boxes", 0);
+        mEditor.commit();
+        mEditor.putInt("boxes1", 0);
+        mEditor.commit();
+        mEditor.putInt("boxes2", 0);
+        mEditor.commit();
+        mEditor.putInt("boxes3", 0);
+        mEditor.commit();
+        mEditor.putInt("boxes4", 0);
         mEditor.commit();
     }
 
