@@ -46,6 +46,7 @@ public class Loot extends AppCompatActivity{
     private Button mKeep5;
     private Button mKeep6;
     private int money;
+    private int totalMoney;
     private int counter;
 
     public static Intent newIntent(Context packageContext, int tier) {
@@ -65,7 +66,7 @@ public class Loot extends AppCompatActivity{
         mEditor = mSharedPreferences.edit();
         money = mSharedPreferences.getInt("money", 0);
         mMoney = (TextView) findViewById(R.id.money);
-        mMoney.setText(Integer.toString(money));
+        mMoney.setText("Money: " + Integer.toString(money));
 
         mLoot1 = (ImageView) findViewById(R.id.loot_1);
         mLoot1.setImageResource(getResources().getIdentifier("item" + loot1,"drawable",
@@ -92,11 +93,14 @@ public class Loot extends AppCompatActivity{
             public void onClick(View view) {
                 mEditor.putInt("money", money + getPrice(loot1));
                 mEditor.commit();
+                totalMoney = mSharedPreferences.getInt("totalMoney", 0);
+                mEditor.putInt("totalMoney", totalMoney + getPrice(loot1));
+                mEditor.commit();
                 money = mSharedPreferences.getInt("money", 0);
                 mSell1.setVisibility(View.INVISIBLE);
                 mKeep1.setVisibility(View.INVISIBLE);
                 mLoot1.setImageResource(R.drawable.blank);
-                mMoney.setText(Integer.toString(money));
+                mMoney.setText("Money: " + Integer.toString(money));
                 addCounter();
             }
         });
@@ -106,11 +110,14 @@ public class Loot extends AppCompatActivity{
             public void onClick(View view) {
                 mEditor.putInt("money", money + getPrice(loot2));
                 mEditor.commit();
+                totalMoney = mSharedPreferences.getInt("totalMoney", 0);
+                mEditor.putInt("totalMoney", totalMoney + getPrice(loot2));
+                mEditor.commit();
                 money = mSharedPreferences.getInt("money", 0);
                 mSell2.setVisibility(View.INVISIBLE);
                 mKeep2.setVisibility(View.INVISIBLE);
                 mLoot2.setImageResource(R.drawable.blank);
-                mMoney.setText(Integer.toString(money));
+                mMoney.setText("Money: " + Integer.toString(money));
                 addCounter();
             }
         });
@@ -120,11 +127,14 @@ public class Loot extends AppCompatActivity{
             public void onClick(View view) {
                 mEditor.putInt("money", money + getPrice(loot3));
                 mEditor.commit();
+                totalMoney = mSharedPreferences.getInt("totalMoney", 0);
+                mEditor.putInt("totalMoney", totalMoney + getPrice(loot3));
+                mEditor.commit();
                 money = mSharedPreferences.getInt("money", 0);
                 mSell3.setVisibility(View.INVISIBLE);
                 mKeep3.setVisibility(View.INVISIBLE);
                 mLoot3.setImageResource(R.drawable.blank);
-                mMoney.setText(Integer.toString(money));
+                mMoney.setText("Money: " + Integer.toString(money));
                 addCounter();
             }
         });
@@ -134,11 +144,14 @@ public class Loot extends AppCompatActivity{
             public void onClick(View view) {
                 mEditor.putInt("money", money + getPrice(loot4));
                 mEditor.commit();
+                totalMoney = mSharedPreferences.getInt("totalMoney", 0);
+                mEditor.putInt("totalMoney", totalMoney + getPrice(loot4));
+                mEditor.commit();
                 money = mSharedPreferences.getInt("money", 0);
                 mSell4.setVisibility(View.INVISIBLE);
                 mKeep4.setVisibility(View.INVISIBLE);
                 mLoot4.setImageResource(R.drawable.blank);
-                mMoney.setText(Integer.toString(money));
+                mMoney.setText("Money: " + Integer.toString(money));
                 addCounter();
             }
         });
@@ -148,11 +161,14 @@ public class Loot extends AppCompatActivity{
             public void onClick(View view) {
                 mEditor.putInt("money", money + getPrice(loot5));
                 mEditor.commit();
+                totalMoney = mSharedPreferences.getInt("totalMoney", 0);
+                mEditor.putInt("totalMoney", totalMoney + getPrice(loot5));
+                mEditor.commit();
                 money = mSharedPreferences.getInt("money", 0);
                 mSell5.setVisibility(View.INVISIBLE);
                 mKeep5.setVisibility(View.INVISIBLE);
                 mLoot5.setImageResource(R.drawable.blank);
-                mMoney.setText(Integer.toString(money));
+                mMoney.setText("Money: " + Integer.toString(money));
                 addCounter();
             }
         });
@@ -162,11 +178,14 @@ public class Loot extends AppCompatActivity{
             public void onClick(View view) {
                 mEditor.putInt("money", money + getPrice(loot6));
                 mEditor.commit();
+                totalMoney = mSharedPreferences.getInt("totalMoney", 0);
+                mEditor.putInt("totalMoney", totalMoney + getPrice(loot6));
+                mEditor.commit();
                 money = mSharedPreferences.getInt("money", 0);
                 mSell6.setVisibility(View.INVISIBLE);
                 mKeep6.setVisibility(View.INVISIBLE);
                 mLoot6.setImageResource(R.drawable.blank);
-                mMoney.setText(Integer.toString(money));
+                mMoney.setText("Money: " + Integer.toString(money));
                 addCounter();
             }
         });
