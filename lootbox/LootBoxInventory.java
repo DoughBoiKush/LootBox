@@ -112,63 +112,63 @@ public class LootBoxInventory extends AppCompatActivity{
             mItem1.setImageResource(getResources().getIdentifier("item" + range, "drawable",
                     getPackageName()));
         } else {
-            mItem1.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem1.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
         if (mSharedPreferences.getBoolean(Integer.toString(range + 1), false)) {
             mItem2.setImageResource(getResources().getIdentifier("item" + (range + 1), "drawable",
                     getPackageName()));
         } else {
-            mItem2.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem2.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
         if (mSharedPreferences.getBoolean(Integer.toString(range + 2), false)) {
             mItem3.setImageResource(getResources().getIdentifier("item" + (range + 2), "drawable",
                     getPackageName()));
         } else {
-            mItem3.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem3.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
         if (mSharedPreferences.getBoolean(Integer.toString(range + 3), false)) {
             mItem4.setImageResource(getResources().getIdentifier("item" + (range + 3), "drawable",
                     getPackageName()));
         } else {
-            mItem4.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem4.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
         if (mSharedPreferences.getBoolean(Integer.toString(range + 4), false)) {
             mItem5.setImageResource(getResources().getIdentifier("item" + (range + 4), "drawable",
                     getPackageName()));
         } else {
-            mItem5.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem5.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
         if (mSharedPreferences.getBoolean(Integer.toString(range + 5), false)) {
             mItem6.setImageResource(getResources().getIdentifier("item" + (range + 5), "drawable",
                     getPackageName()));
         } else {
-            mItem6.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem6.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
         if (mSharedPreferences.getBoolean(Integer.toString(range + 6), false)) {
             mItem7.setImageResource(getResources().getIdentifier("item" + (range + 6), "drawable",
                     getPackageName()));
         } else {
-            mItem7.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem7.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
         if (mSharedPreferences.getBoolean(Integer.toString(range + 7), false)) {
             mItem8.setImageResource(getResources().getIdentifier("item" + (range + 7), "drawable",
                     getPackageName()));
         } else {
-            mItem8.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem8.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
         if (mSharedPreferences.getBoolean(Integer.toString(range + 8), false)) {
             mItem9.setImageResource(getResources().getIdentifier("item" + (range + 8), "drawable",
                     getPackageName()));
         } else {
-            mItem9.setImageResource(getResources().getIdentifier("itemt" + tier + "blank", "drawable",
+            mItem9.setImageResource(getResources().getIdentifier("blank" + tier, "drawable",
                     getPackageName()));
         }
 
