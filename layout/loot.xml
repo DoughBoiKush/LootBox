@@ -28,8 +28,8 @@
         app:layout_constraintVertical_bias="0.055" />
 
     <TextView
-        android:id="@+id/moneyView"
-        android:layout_width="80dp"
+        android:id="@+id/money"
+        android:layout_width="196dp"
         android:layout_height="36dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -40,27 +40,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.399"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
-
-    <TextView
-        android:id="@+id/money"
-        android:layout_width="70dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.654"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.132" />
 
     <ImageView
         android:id="@+id/loot_2"
@@ -357,3 +339,4 @@
         app:layout_constraintVertical_bias="0.565" />
 
 </android.support.constraint.ConstraintLayout>
+
