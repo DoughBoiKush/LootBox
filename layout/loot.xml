@@ -6,9 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg04"
     >
 
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/chestbg1"
+        android:scaleType="centerCrop"
+        />
 
     <TextView
         android:id="@+id/textView"
@@ -19,6 +25,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Enjoy Your Loot"
+        android:gravity="center"
         android:textSize="27dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,22 +34,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055" />
 
+
     <TextView
         android:id="@+id/money"
-        android:layout_width="196dp"
+        android:layout_width="200dp"
         android:layout_height="36dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="money: "
         android:textSize="24sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132" />
+        app:layout_constraintVertical_bias="0.161" />
 
     <ImageView
         android:id="@+id/loot_2"
@@ -339,4 +347,3 @@
         app:layout_constraintVertical_bias="0.565" />
 
 </android.support.constraint.ConstraintLayout>
-
