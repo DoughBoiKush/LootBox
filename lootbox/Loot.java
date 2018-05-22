@@ -48,6 +48,7 @@ public class Loot extends AppCompatActivity{
     private int money;
     private int totalMoney;
     private int counter;
+    private ImageView img;
 
     public static Intent newIntent(Context packageContext, int tier) {
         Intent intent = new Intent(packageContext, Loot.class);
@@ -59,14 +60,32 @@ public class Loot extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loot);
+        img = (ImageView) findViewById(R.id.image);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mTier = getIntent().getIntExtra(EXTRA_TIER, 1);
+        if (mTier == 1){
+            img.setImageResource(R.drawable.chestbg1);
+        }
+        else if (mTier == 2){
+            img.setImageResource(R.drawable.chestbg2);
+        }
+        else if (mTier == 3){
+            img.setImageResource(R.drawable.chestbg3);
+        }
+        else if (mTier == 4){
+            img.setImageResource(R.drawable.chestbg4);
+        }
         getLoot(mTier);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
         money = mSharedPreferences.getInt("money", 0);
+
         mMoney = (TextView) findViewById(R.id.money);
-        mMoney.setText("Money: " + Integer.toString(money));
+        if(money > 1000000){
+            int moneymil = money/1000000;
+            mMoney.setText("Money: " + Integer.toString(moneymil) + "M");
+        }
+        else{mMoney.setText("Money: " + Integer.toString(money));}
 
         mLoot1 = (ImageView) findViewById(R.id.loot_1);
         mLoot1.setImageResource(getResources().getIdentifier("item" + loot1,"drawable",
@@ -100,7 +119,11 @@ public class Loot extends AppCompatActivity{
                 mSell1.setVisibility(View.INVISIBLE);
                 mKeep1.setVisibility(View.INVISIBLE);
                 mLoot1.setImageResource(R.drawable.blank);
-                mMoney.setText("Money: " + Integer.toString(money));
+                if(money > 1000000){
+                    int moneymil = money/1000000;
+                    mMoney.setText("Money: " + Integer.toString(moneymil) + "M");
+                }
+                else{mMoney.setText("Money: " + Integer.toString(money));}
                 addCounter();
             }
         });
@@ -117,7 +140,11 @@ public class Loot extends AppCompatActivity{
                 mSell2.setVisibility(View.INVISIBLE);
                 mKeep2.setVisibility(View.INVISIBLE);
                 mLoot2.setImageResource(R.drawable.blank);
-                mMoney.setText("Money: " + Integer.toString(money));
+                if(money > 1000000){
+                    int moneymil = money/1000000;
+                    mMoney.setText("Money: " + Integer.toString(moneymil) + "M");
+                }
+                else{mMoney.setText("Money: " + Integer.toString(money));}
                 addCounter();
             }
         });
@@ -134,7 +161,11 @@ public class Loot extends AppCompatActivity{
                 mSell3.setVisibility(View.INVISIBLE);
                 mKeep3.setVisibility(View.INVISIBLE);
                 mLoot3.setImageResource(R.drawable.blank);
-                mMoney.setText("Money: " + Integer.toString(money));
+                if(money > 1000000){
+                    int moneymil = money/1000000;
+                    mMoney.setText("Money: " + Integer.toString(moneymil) + "M");
+                }
+                else{mMoney.setText("Money: " + Integer.toString(money));}
                 addCounter();
             }
         });
@@ -151,7 +182,11 @@ public class Loot extends AppCompatActivity{
                 mSell4.setVisibility(View.INVISIBLE);
                 mKeep4.setVisibility(View.INVISIBLE);
                 mLoot4.setImageResource(R.drawable.blank);
-                mMoney.setText("Money: " + Integer.toString(money));
+                if(money > 1000000){
+                    int moneymil = money/1000000;
+                    mMoney.setText("Money: " + Integer.toString(moneymil) + "M");
+                }
+                else{mMoney.setText("Money: " + Integer.toString(money));}
                 addCounter();
             }
         });
@@ -168,7 +203,11 @@ public class Loot extends AppCompatActivity{
                 mSell5.setVisibility(View.INVISIBLE);
                 mKeep5.setVisibility(View.INVISIBLE);
                 mLoot5.setImageResource(R.drawable.blank);
-                mMoney.setText("Money: " + Integer.toString(money));
+                if(money > 1000000){
+                    int moneymil = money/1000000;
+                    mMoney.setText("Money: " + Integer.toString(moneymil) + "M");
+                }
+                else{mMoney.setText("Money: " + Integer.toString(money));}
                 addCounter();
             }
         });
@@ -185,7 +224,11 @@ public class Loot extends AppCompatActivity{
                 mSell6.setVisibility(View.INVISIBLE);
                 mKeep6.setVisibility(View.INVISIBLE);
                 mLoot6.setImageResource(R.drawable.blank);
-                mMoney.setText("Money: " + Integer.toString(money));
+                if(money > 1000000){
+                    int moneymil = money/1000000;
+                    mMoney.setText("Money: " + Integer.toString(moneymil) + "M");
+                }
+                else{mMoney.setText("Money: " + Integer.toString(money));}
                 addCounter();
             }
         });
@@ -298,9 +341,8 @@ public class Loot extends AppCompatActivity{
         } else if (rarity < 100) {
             return ((tier - 1) * 45) + r.nextInt(10) + 31;
         }
-            return ((tier - 1) * 45) + r.nextInt(5) + 41;
+        return ((tier - 1) * 45) + r.nextInt(5) + 41;
     }
-
 
     public void getLoot(int tier) {
         Random r = new Random();
@@ -351,7 +393,7 @@ public class Loot extends AppCompatActivity{
     public void addCounter() {
         counter++;
         if (counter == 6) {
-            Intent intent = LootBoxActivity.newIntent(getApplicationContext(), mTier);
+            Intent intent = com.mcs270.lootbox.LootBoxActivity.newIntent(getApplicationContext(), mTier);
             startActivity(intent);
         }
     }
@@ -376,7 +418,6 @@ public class Loot extends AppCompatActivity{
             mKeep6.setVisibility(View.INVISIBLE);
         }
     }
-
 
     @Override
     public void onBackPressed() {
