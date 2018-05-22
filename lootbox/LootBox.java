@@ -1,4 +1,3 @@
-
 package com.mcs270.lootbox;
 
 import android.content.DialogInterface;
@@ -12,6 +11,8 @@ import android.widget.Button;
 import android.content.SharedPreferences;
 import android.content.DialogInterface;
 import android.app.AlertDialog;
+
+//import lootbox.mcs270.com.lootbox.R;
 
 public class LootBox extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class LootBox extends AppCompatActivity {
         mContinueGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = LootBoxActivity.newIntent(getApplicationContext(), 1);
+                Intent intent = com.mcs270.lootbox.LootBoxActivity.newIntent(getApplicationContext(), 1);
                 startActivity(intent);
             }
         });
@@ -54,7 +55,7 @@ public class LootBox extends AppCompatActivity {
 
                     public void onClick(DialogInterface dialog, int which) {
                         newGame();
-                        Intent intent = LootBoxActivity.newIntent(getApplicationContext(), 1);
+                        Intent intent = com.mcs270.lootbox.LootBoxActivity.newIntent(getApplicationContext(), 1);
                         startActivity(intent);
                         dialog.dismiss();
                     }
