@@ -1,5 +1,6 @@
 package com.mcs270.lootbox;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 public class Stats extends AppCompatActivity{
 
+    private static final String EXTRA_TIER = "com.mcs270.lootbox.tier";
     private SharedPreferences mSharedPreferences;
     private int money;
     private int totalMoney;
@@ -30,12 +32,21 @@ public class Stats extends AppCompatActivity{
     private TextView mBoxes3;
     private TextView mBoxes4;
     private Button mBackButton;
+    private int mTier;
+
+    public static Intent newIntent(Context packageContext, int tier) {
+        Intent intent = new Intent(packageContext, Stats.class);
+        intent.putExtra(EXTRA_TIER, tier);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stats_layout);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        mTier = getIntent().getIntExtra(EXTRA_TIER, 1);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -76,7 +87,7 @@ public class Stats extends AppCompatActivity{
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), com.mcs270.lootbox.LootBoxActivity.class);
+                Intent intent = LootBoxActivity.newIntent(getApplicationContext(), mTier);
                 startActivity(intent);
             }
         });
