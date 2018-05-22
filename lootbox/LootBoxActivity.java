@@ -74,7 +74,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
-                Intent intent = new Intent(getApplicationContext(), com.mcs270.lootbox.LootBoxInventory.class);
+                Intent intent = LootBoxInventory.newIntent(getApplicationContext(), mTier);
                 startActivity(intent);
             }
         });
@@ -87,7 +87,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
-                Intent intent = new Intent(getApplicationContext(), Stats.class);
+                Intent intent = Stats.newIntent(getApplicationContext(), mTier);
                 startActivity(intent);
             }
         });
@@ -102,7 +102,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
-
+                mTier = 1;
                 mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest(1);
             }
@@ -116,7 +116,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
-
+                mTier = 2;
                 mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest(2);
             }
@@ -130,7 +130,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
-
+                mTier = 3;
                 mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest(3);
             }
@@ -144,7 +144,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
-
+                mTier = 4;
                 mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest(4);
             }
