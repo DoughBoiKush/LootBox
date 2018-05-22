@@ -24,6 +24,6 @@ Created by Kelsan, Jacob, and Nara
 ![Image3](https://i.imgur.com/yjpyGAr.jpg)
 ![Image4](https://i.imgur.com/mza1CcS.jpg)
 
-
+Background Art by Moua Yang
 
 
