@@ -1,5 +1,6 @@
 package com.mcs270.lootbox;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 
 public class LootBoxInventory extends AppCompatActivity{
 
+    private static final String EXTRA_TIER = "com.mcs270.lootbox.tier";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private Button mHomeButton;
@@ -28,12 +30,21 @@ public class LootBoxInventory extends AppCompatActivity{
     private ImageView mItem9;
     private int range;
     private int tier;
+    private int mTier;
+
+    public static Intent newIntent(Context packageContext, int tier) {
+        Intent intent = new Intent(packageContext, LootBoxInventory.class);
+        intent.putExtra(EXTRA_TIER, tier);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory_layout);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        mTier = getIntent().getIntExtra(EXTRA_TIER, 1);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
@@ -45,7 +56,7 @@ public class LootBoxInventory extends AppCompatActivity{
         mHomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), com.mcs270.lootbox.LootBoxActivity.class);
+                Intent intent = LootBoxActivity.newIntent(getApplicationContext(), mTier);
                 startActivity(intent);
             }
         });
