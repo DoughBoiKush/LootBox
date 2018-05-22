@@ -3,10 +3,7 @@ package com.mcs270.lootbox;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
@@ -18,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Handler;
 import android.widget.Toast;
+
+//import lootbox.mcs270.com.lootbox.R;
 
 
 public class LootBoxActivity extends AppCompatActivity{
@@ -39,6 +38,9 @@ public class LootBoxActivity extends AppCompatActivity{
     private long mLastClickTime = 0;
     private int money;
     private int boxes;
+    private ImageView img;
+
+
 
     public static Intent newIntent(Context packageContext, int tier) {
         Intent intent = new Intent(packageContext, LootBoxActivity.class);
@@ -50,15 +52,21 @@ public class LootBoxActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
+
         mTier = getIntent().getIntExtra(EXTRA_TIER, 1);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
-
+        img = (ImageView) findViewById(R.id.image);
         money = mSharedPreferences.getInt("money", 0);
 
         mMoneyView = (TextView) findViewById(R.id.MoneyView);
-        mMoneyView.setText("Money: " + Integer.toString(money));
+        if(money > 1000000){
+            int moneymil = money/1000000;
+            mMoneyView.setText("Money: " + Integer.toString(moneymil) + "M");
+        }
+        else{mMoneyView.setText("Money: " + Integer.toString(money));}
+
 
         mInventoryButton = (Button) findViewById(R.id.inventory_button);
         mInventoryButton.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +76,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
-                Intent intent = new Intent(getApplicationContext(), LootBoxInventory.class);
+                Intent intent = new Intent(getApplicationContext(), com.mcs270.lootbox.LootBoxInventory.class);
                 startActivity(intent);
             }
         });
@@ -96,6 +104,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
+
                 mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest(1);
             }
@@ -109,6 +118,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
+
                 mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest(2);
             }
@@ -122,6 +132,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
+
                 mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest(3);
             }
@@ -135,6 +146,7 @@ public class LootBoxActivity extends AppCompatActivity{
                 if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
                     return;
                 }
+
                 mCurrentChest.setImageResource(R.drawable.blank);
                 updateChest(4);
             }
@@ -166,7 +178,11 @@ public class LootBoxActivity extends AppCompatActivity{
                     boxes = mSharedPreferences.getInt("boxes", 0);
                     mEditor.putInt("boxes", boxes + 1);
                     mEditor.commit();
-                    mMoneyView.setText("Money: " + Integer.toString(money));
+                    if(money > 1000000){
+                        int moneymil = money/1000000;
+                        mMoneyView.setText("Money: " + Integer.toString(moneymil) + "M");
+                    }
+                    else{mMoneyView.setText("Money: " + Integer.toString(money));}
                     mLastClickTime = SystemClock.elapsedRealtime();
                     ImageView animation1 = findViewById(R.id.imageView);
                     animation1.setImageResource(R.drawable.animation1);
@@ -192,7 +208,11 @@ public class LootBoxActivity extends AppCompatActivity{
                     boxes = mSharedPreferences.getInt("boxes", 0);
                     mEditor.putInt("boxes", boxes + 1);
                     mEditor.commit();
-                    mMoneyView.setText("Money: " + Integer.toString(money));
+                    if(money > 1000000){
+                        int moneymil = money/1000000;
+                        mMoneyView.setText("Money: " + Integer.toString(moneymil) + "M");
+                    }
+                    else{mMoneyView.setText("Money: " + Integer.toString(money));}
                     ImageView animation2 = findViewById(R.id.imageView);
                     animation2.setImageResource(R.drawable.animation2);
                     AnimationDrawable openBox = (AnimationDrawable) animation2.getDrawable();
@@ -217,7 +237,11 @@ public class LootBoxActivity extends AppCompatActivity{
                     boxes = mSharedPreferences.getInt("boxes", 0);
                     mEditor.putInt("boxes", boxes + 1);
                     mEditor.commit();
-                    mMoneyView.setText("Money: " + Integer.toString(money));
+                    if(money > 1000000){
+                        int moneymil = money/1000000;
+                        mMoneyView.setText("Money: " + Integer.toString(moneymil) + "M");
+                    }
+                    else{mMoneyView.setText("Money: " + Integer.toString(money));}
                     ImageView animation3 = findViewById(R.id.imageView);
                     animation3.setImageResource(R.drawable.animation3);
                     AnimationDrawable openBox = (AnimationDrawable) animation3.getDrawable();
@@ -242,7 +266,11 @@ public class LootBoxActivity extends AppCompatActivity{
                     boxes = mSharedPreferences.getInt("boxes", 0);
                     mEditor.putInt("boxes", boxes + 1);
                     mEditor.commit();
-                    mMoneyView.setText("Money: " + Integer.toString(money));
+                    if(money > 1000000){
+                        int moneymil = money/1000000;
+                        mMoneyView.setText("Money: " + Integer.toString(moneymil) + "M");
+                    }
+                    else{mMoneyView.setText("Money: " + Integer.toString(money));}
                     ImageView animation4 = findViewById(R.id.imageView);
                     animation4.setImageResource(R.drawable.animation4);
                     AnimationDrawable openBox = (AnimationDrawable) animation4.getDrawable();
@@ -268,18 +296,22 @@ public class LootBoxActivity extends AppCompatActivity{
 
     private void updateChest(int box) {
         if (box == 1) {
+            img.setImageResource(R.drawable.chestbg1);
             mCurrentChest.setImageResource(R.drawable.common01);
             price = 100;
             mPriceView.setText("Price: " + Integer.toString(price));
         } else if (box == 2) {
+            img.setImageResource(R.drawable.chestbg2);
             mCurrentChest.setImageResource(R.drawable.rare01);
             price = 1000;
             mPriceView.setText("Price: " + Integer.toString(price));
         } else if (box == 3) {
+            img.setImageResource(R.drawable.chestbg3);
             mCurrentChest.setImageResource(R.drawable.epic01);
             price = 10000;
             mPriceView.setText("Price: " + Integer.toString(price));
         } else if (box == 4) {
+            img.setImageResource(R.drawable.chestbg4);
             mCurrentChest.setImageResource(R.drawable.legendary01);
             price = 100000;
             mPriceView.setText("Price: " + Integer.toString(price));
@@ -289,7 +321,7 @@ public class LootBoxActivity extends AppCompatActivity{
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(getApplicationContext(), LootBox.class);
+        Intent intent = new Intent(getApplicationContext(), com.mcs270.lootbox.LootBox.class);
         startActivity(intent);
     }
 
