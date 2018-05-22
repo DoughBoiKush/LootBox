@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -49,6 +50,7 @@ public class Loot extends AppCompatActivity{
     private int totalMoney;
     private int counter;
     private ImageView img;
+    private TextView text;
 
     public static Intent newIntent(Context packageContext, int tier) {
         Intent intent = new Intent(packageContext, Loot.class);
@@ -63,18 +65,6 @@ public class Loot extends AppCompatActivity{
         img = (ImageView) findViewById(R.id.image);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         mTier = getIntent().getIntExtra(EXTRA_TIER, 1);
-        if (mTier == 1){
-            img.setImageResource(R.drawable.chestbg1);
-        }
-        else if (mTier == 2){
-            img.setImageResource(R.drawable.chestbg2);
-        }
-        else if (mTier == 3){
-            img.setImageResource(R.drawable.chestbg3);
-        }
-        else if (mTier == 4){
-            img.setImageResource(R.drawable.chestbg4);
-        }
         getLoot(mTier);
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
@@ -86,6 +76,22 @@ public class Loot extends AppCompatActivity{
             mMoney.setText("Money: " + Integer.toString(moneymil) + "M");
         }
         else{mMoney.setText("Money: " + Integer.toString(money));}
+
+        if (mTier == 1){
+            img.setImageResource(R.drawable.chestbg1);
+        }
+        else if (mTier == 2){
+            img.setImageResource(R.drawable.chestbg2);
+            text = (TextView) findViewById(R.id.textView);
+            text.setTextColor(Color.WHITE);
+            mMoney.setTextColor(Color.WHITE);
+        }
+        else if (mTier == 3){
+            img.setImageResource(R.drawable.chestbg3);
+        }
+        else if (mTier == 4){
+            img.setImageResource(R.drawable.chestbg4);
+        }
 
         mLoot1 = (ImageView) findViewById(R.id.loot_1);
         mLoot1.setImageResource(getResources().getIdentifier("item" + loot1,"drawable",
