@@ -3,6 +3,7 @@ package com.mcs270.lootbox;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -15,9 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.Handler;
 import android.widget.Toast;
-
-//import lootbox.mcs270.com.lootbox.R;
-
 
 public class LootBoxActivity extends AppCompatActivity{
 
@@ -300,21 +298,29 @@ public class LootBoxActivity extends AppCompatActivity{
             mCurrentChest.setImageResource(R.drawable.common01);
             price = 100;
             mPriceView.setText("Price: " + Integer.toString(price));
+            mPriceView.setTextColor(Color.BLACK);
+            mMoneyView.setTextColor(Color.BLACK);
         } else if (box == 2) {
             img.setImageResource(R.drawable.chestbg2);
             mCurrentChest.setImageResource(R.drawable.rare01);
             price = 1000;
             mPriceView.setText("Price: " + Integer.toString(price));
+            mPriceView.setTextColor(Color.WHITE);
+            mMoneyView.setTextColor(Color.WHITE);
         } else if (box == 3) {
             img.setImageResource(R.drawable.chestbg3);
             mCurrentChest.setImageResource(R.drawable.epic01);
             price = 10000;
             mPriceView.setText("Price: " + Integer.toString(price));
+            mPriceView.setTextColor(Color.BLACK);
+            mMoneyView.setTextColor(Color.BLACK);
         } else if (box == 4) {
             img.setImageResource(R.drawable.chestbg4);
             mCurrentChest.setImageResource(R.drawable.legendary01);
             price = 100000;
             mPriceView.setText("Price: " + Integer.toString(price));
+            mPriceView.setTextColor(Color.BLACK);
+            mMoneyView.setTextColor(Color.BLACK);
 
         }
     }
