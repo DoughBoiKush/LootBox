@@ -37,6 +37,7 @@ public class LootBoxActivity extends AppCompatActivity{
     private int money;
     private int boxes;
     private ImageView img;
+    private int mClicked;
 
 
 
@@ -52,6 +53,7 @@ public class LootBoxActivity extends AppCompatActivity{
         setContentView(R.layout.game_layout);
 
         mTier = getIntent().getIntExtra(EXTRA_TIER, 1);
+        mClicked = 0;
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
@@ -70,8 +72,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mInventoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // mis-clicking prevention, using threshold of 1300 ms
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
+                if (mClicked == 1){
                     return;
                 }
                 Intent intent = LootBoxInventory.newIntent(getApplicationContext(), mTier);
@@ -83,8 +84,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mStatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // mis-clicking prevention, using threshold of 1300 ms
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
+                if (mClicked == 1){
                     return;
                 }
                 Intent intent = Stats.newIntent(getApplicationContext(), mTier);
@@ -98,8 +98,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mCommonButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // mis-clicking prevention, using threshold of 1300 ms
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
+                if (mClicked == 1){
                     return;
                 }
                 mTier = 1;
@@ -112,8 +111,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mRareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // mis-clicking prevention, using threshold of 1300 ms
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
+                if (mClicked == 1){
                     return;
                 }
                 mTier = 2;
@@ -126,8 +124,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mEpicButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // mis-clicking prevention, using threshold of 12300 ms
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
+                if (mClicked == 1){
                     return;
                 }
                 mTier = 3;
@@ -140,8 +137,7 @@ public class LootBoxActivity extends AppCompatActivity{
         mLegendaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // mis-clicking prevention, using threshold of 1300 ms
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
+                if (mClicked == 1){
                     return;
                 }
                 mTier = 4;
@@ -161,11 +157,11 @@ public class LootBoxActivity extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), R.string.no_money, Toast.LENGTH_SHORT).show();
                     return;
                 }
-                // mis-clicking prevention, using threshold of 1300 ms
-                if (SystemClock.elapsedRealtime() - mLastClickTime < 1300){
+                if (mClicked == 1){
                     return;
                 }
                 mCurrentChest.setImageResource(R.drawable.blank);
+                mClicked = 1;
                 if (price == 100){
                     money = money - price;
                     mEditor.putInt("money", money);
